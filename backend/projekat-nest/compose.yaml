@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+ projekat_db:
+   container_name: projekat_db
+   image: postgres
+   restart: always
+   environment:
+     POSTGRES_DB: projekat
+     POSTGRES_USER: postgres
+     POSTGRES_PASSWORD: pufla12
+     PGDATA: /var/lib/postgresql/data
+   ports:
+     - "5432:5432"
+   volumes:
+     - db-data:/var/lib/postgresql/data
+volumes:
+ db-data:
